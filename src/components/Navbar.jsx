@@ -1,11 +1,12 @@
 import React from 'react';
-import { ShieldCheck, Activity, Sliders, Printer, FolderDown } from 'lucide-react';
+import { ShieldCheck, Activity, Sliders, Printer, FolderDown, BookOpen } from 'lucide-react';
 
 export default function Navbar({
   analysis,
   onOpenStressTest,
   onOpenCreditMemo,
-  onOpenProfileManager
+  onOpenProfileManager,
+  onOpenMethodology
 }) {
   const grade = analysis?.grade || 'C';
 
@@ -65,6 +66,16 @@ export default function Navbar({
           </div>
 
           {/* Action Buttons */}
+          <button
+            type="button"
+            onClick={onOpenMethodology}
+            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700 hover:border-slate-600 transition-all shadow-xs"
+            title="Buka rujukan POJK, regulasi perbankan, dan literatur ilmiah"
+          >
+            <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
+            <span className="hidden sm:inline">Regulasi & Sumber</span>
+          </button>
+
           <button
             type="button"
             onClick={onOpenStressTest}

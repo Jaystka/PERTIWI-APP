@@ -234,6 +234,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, (dscrBaru / 2.5) * 100),
       status: dscrBaru >= 1.5 ? 'Sehat' : dscrBaru >= 1.2 ? 'Waspada' : 'Kritis',
       color: dscrBaru >= 1.5 ? 'emerald' : dscrBaru >= 1.2 ? 'amber' : 'rose',
+      referensi: 'POJK No. 40/2019 & Basel II/III',
       arti:
         dscrBaru >= 1.5
           ? `Laba usaha ${dscrBaru.toFixed(2)} kali lipat lebih besar dari total beban cicilan bulanan. Arus kas sangat aman.`
@@ -252,6 +253,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, (currentRatio / 2.5) * 100),
       status: currentRatio >= 1.5 ? 'Sehat' : currentRatio >= 1.05 ? 'Waspada' : 'Kritis',
       color: currentRatio >= 1.5 ? 'emerald' : currentRatio >= 1.05 ? 'amber' : 'rose',
+      referensi: 'Subramanyam & Kasmir (2022)',
       arti:
         currentRatio >= 1.5
           ? 'Aset lancar (kas, piutang, stok) sangat memadai untuk melunasi utang dagang/supplier jatuh tempo.'
@@ -270,6 +272,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, (quickRatio / 1.8) * 100),
       status: quickRatio >= 1.0 ? 'Sehat' : quickRatio >= 0.65 ? 'Waspada' : 'Kritis',
       color: quickRatio >= 1.0 ? 'emerald' : quickRatio >= 0.65 ? 'amber' : 'rose',
+      referensi: 'Subramanyam & Kasmir (2022)',
       arti:
         quickRatio >= 1.0
           ? 'Tanpa harus menjual stok barang, kas dan piutang sudah mampu menutup kewajiban jangka pendek.'
@@ -286,6 +289,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, Math.max(0, (npm / 18) * 100)),
       status: npm >= 8 ? 'Sehat' : npm >= 4 ? 'Waspada' : 'Kritis',
       color: npm >= 8 ? 'emerald' : npm >= 4 ? 'amber' : 'rose',
+      referensi: 'SAK EMKM (IAI) & Analisis Margin',
       arti:
         npm >= 8
           ? `Dari setiap Rp 100.000 penjualan, pedagang mengantongi laba bersih Rp ${Math.round(npm * 1000).toLocaleString('id-ID')}. Efisiensi biaya sangat baik.`
@@ -304,6 +308,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, Math.max(0, (gpm / 45) * 100)),
       status: gpm >= 18 ? 'Sehat' : gpm >= 10 ? 'Waspada' : 'Kritis',
       color: gpm >= 18 ? 'emerald' : gpm >= 10 ? 'amber' : 'rose',
+      referensi: 'Benchmark Ritel & Manufaktur BI',
       arti: `Selisih harga jual dengan modal barang (HPP) adalah ${gpm.toFixed(1)}%. Menunjukkan daya tawar harga produk di pasar.`
     },
     {
@@ -317,6 +322,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, Math.max(0, (roeTahunan / 35) * 100)),
       status: roeTahunan >= 15 ? 'Sehat' : roeTahunan >= 8 ? 'Waspada' : 'Kritis',
       color: roeTahunan >= 15 ? 'emerald' : roeTahunan >= 8 ? 'amber' : 'rose',
+      referensi: 'Kasmir & Manajemen Keuangan',
       arti:
         roeTahunan >= 15
           ? 'Tingkat pengembalian modal sendiri sangat produktif, jauh di atas bunga deposito/inflasi.'
@@ -333,6 +339,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, Math.max(0, 100 - ((der - 40) / 220) * 100)),
       status: der <= 100 ? 'Sehat' : der <= 160 ? 'Waspada' : 'Kritis',
       color: der <= 100 ? 'emerald' : der <= 160 ? 'amber' : 'rose',
+      referensi: 'Altman Z-Score & Standar Keuangan RI',
       arti:
         der <= 100
           ? 'Modal sendiri pemilik lebih besar daripada total utang. Struktur permodalan usaha sangat kokoh.'
@@ -351,6 +358,7 @@ export function calculateFinancialAnalysis(formData) {
       progress: Math.min(100, Math.max(10, 100 - (inventoryDays / 75) * 100)),
       status: inventoryDays <= 30 ? 'Sehat' : inventoryDays <= 50 ? 'Waspada' : 'Kritis',
       color: inventoryDays <= 30 ? 'emerald' : inventoryDays <= 50 ? 'amber' : 'rose',
+      referensi: 'Working Capital Mgmt (CCC)',
       arti:
         inventoryDays <= 30
           ? `Stok barang rata-rata terjual habis dan berganti uang kas setiap ${Math.round(inventoryDays)} hari sekali.`

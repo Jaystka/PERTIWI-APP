@@ -18,6 +18,7 @@ import EarlyWarningSystem from './components/EarlyWarningSystem';
 import StressTestModal from './components/StressTestModal';
 import CreditMemoModal from './components/CreditMemoModal';
 import ProfileManagerModal from './components/ProfileManagerModal';
+import MethodologyModal from './components/MethodologyModal';
 
 // Icons
 import {
@@ -33,7 +34,8 @@ import {
   Activity,
   FileSpreadsheet,
   Sliders,
-  Printer
+  Printer,
+  BookOpen
 } from 'lucide-react';
 
 export default function App() {
@@ -49,6 +51,7 @@ export default function App() {
   const [isStressTestOpen, setIsStressTestOpen] = useState(false);
   const [isCreditMemoOpen, setIsCreditMemoOpen] = useState(false);
   const [isProfileManagerOpen, setIsProfileManagerOpen] = useState(false);
+  const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
 
   // Memuat preset
   const handleLoadPreset = (presetKey) => {
@@ -130,6 +133,7 @@ export default function App() {
         onOpenStressTest={() => setIsStressTestOpen(true)}
         onOpenCreditMemo={() => setIsCreditMemoOpen(true)}
         onOpenProfileManager={() => setIsProfileManagerOpen(true)}
+        onOpenMethodology={() => setIsMethodologyOpen(true)}
       />
 
       {/* Main Container */}
@@ -437,13 +441,25 @@ export default function App() {
         analysis={analysis}
       />
 
+      <MethodologyModal
+        isOpen={isMethodologyOpen}
+        onClose={() => setIsMethodologyOpen(false)}
+      />
+
       {/* Footer */}
-      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-200 text-center text-xs text-slate-400">
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-200 text-center text-xs text-slate-400 space-y-1">
         <p className="font-semibold text-slate-600">
           PERTIWI FinScore © {new Date().getFullYear()} • Sistem Analitik & Credit Scoring Terpadu Pedagang UMKM Indonesia
         </p>
-        <p className="mt-1">
-          Diformulasikan berdasarkan prinsip kehati-hatian perbankan (Prudential Banking) & POJK tentang Penilaian Kualitas Aset Lembaga Keuangan.
+        <p className="mt-1 flex items-center justify-center gap-1.5 flex-wrap">
+          <span>Diformulasikan berdasarkan regulasi perbankan (POJK No. 40/2019, POJK No. 18/2017 & 11/2024, SAK EMKM) serta model ilmiah Hybrid Credit Scoring.</span>
+          <button
+            type="button"
+            onClick={() => setIsMethodologyOpen(true)}
+            className="font-bold text-indigo-600 hover:text-indigo-800 underline underline-offset-2 transition-colors cursor-pointer"
+          >
+            Pelajari Landasan Regulasi & Literatur Lengkap
+          </button>
         </p>
       </footer>
     </div>

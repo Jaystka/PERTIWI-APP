@@ -264,6 +264,16 @@ export default function CreditMemoModal({ isOpen, onClose, formData, analysis })
             </div>
           </div>
 
+          {/* H. Dasar Hukum & Metodologi Penilaian */}
+          <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-[10px] text-slate-600 space-y-1">
+            <span className="font-bold text-slate-800 uppercase block">
+              H. Dasar Hukum & Rujukan Metodologi Penilaian Kredit
+            </span>
+            <p className="leading-relaxed">
+              Analisis kelayakan kredit ini disusun berdasarkan regulasi perbankan Republik Indonesia: <strong>POJK No. 40/POJK.03/2019</strong> (Penilaian Kualitas Aset & Repayment Capacity), <strong>POJK No. 18/POJK.03/2017 & POJK No. 11/2024</strong> (SLIK OJK), <strong>SAK EMKM (Ikatan Akuntan Indonesia)</strong>, serta mengadaptasi model ilmiah <strong>Hybrid Credit Scoring Altman & Sabato (2007)</strong> dan <strong>Digital Footprint Berg et al. (2020)</strong>.
+            </p>
+          </div>
+
           {/* 6. Kolom Tanda Tangan Komite & Persetujuan */}
           <div className="pt-4 border-t border-slate-200">
             <span className="text-[10px] uppercase font-bold text-slate-400 block mb-3 text-center">

@@ -81,9 +81,17 @@ export default function RatioGrid({ ratios }) {
                 </div>
               </div>
 
-              <p className="text-[11px] text-slate-600 leading-relaxed bg-white p-2.5 rounded-lg border border-slate-200/70">
-                {item.arti}
-              </p>
+              <div className="space-y-1.5">
+                <p className="text-[11px] text-slate-600 leading-relaxed bg-white p-2.5 rounded-lg border border-slate-200/70">
+                  {item.arti}
+                </p>
+                {item.referensi && (
+                  <div className="flex items-center gap-1 text-[10px] text-slate-400 px-1">
+                    <span className="font-semibold text-slate-500">Acuan:</span>
+                    <span className="truncate text-indigo-600/80 font-medium">{item.referensi}</span>
+                  </div>
+                )}
+              </div>
             </div>
           );
         })}
