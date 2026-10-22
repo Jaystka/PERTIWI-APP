@@ -27,17 +27,17 @@ export default function StressTestModal({ isOpen, onClose, formData }) {
   const { baseline, stressed, deltaScore, deltaDscr, deltaLaba, isStillFeasible } = stressResult;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div className="bg-white text-slate-800 px-6 py-4 flex items-center justify-between border-b border-slate-200">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
+            <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-200">
               <Sliders className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white">Simulator Sensitivitas & Stress Testing</h3>
-              <p className="text-[11px] text-slate-400">
+              <h3 className="text-sm font-bold text-slate-900">Simulator Sensitivitas & Stress Testing</h3>
+              <p className="text-[11px] text-slate-500">
                 Uji daya tahan arus kas nasabah terhadap potensi krisis penjualan dan inflasi biaya
               </p>
             </div>
@@ -45,7 +45,7 @@ export default function StressTestModal({ isOpen, onClose, formData }) {
           <button
             type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-white rounded-lg p-1.5 transition-colors"
+            className="text-slate-400 hover:text-slate-700 rounded-lg p-1.5 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -200,7 +200,7 @@ export default function StressTestModal({ isOpen, onClose, formData }) {
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-bold rounded-lg bg-slate-900 hover:bg-slate-800 text-white"
+            className="px-4 py-2 text-xs font-bold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition-all shadow-xs"
           >
             Tutup Simulator
           </button>

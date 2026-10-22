@@ -72,18 +72,18 @@ export default function EarlyWarningSystem({ analysis }) {
 
       {/* Actionable Insights / Rekomendasi Tindakan */}
       {rekomendasi.length > 0 && (
-        <div className="rounded-xl bg-slate-900 text-white p-4 sm:p-5">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-300 mb-3 flex items-center gap-2">
-            <Info className="w-4 h-4 text-indigo-400" />
+        <div className="rounded-xl bg-indigo-50/70 border border-indigo-200/90 text-indigo-950 p-4 sm:p-5">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-900 mb-3 flex items-center gap-2">
+            <Info className="w-4 h-4 text-indigo-600" />
             <span>Rekomendasi Penyehatan Usaha & Solusi bagi Analis Kredit</span>
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {rekomendasi.map((rek, idx) => (
-              <div key={idx} className="bg-slate-800/80 border border-slate-700 rounded-lg p-3">
-                <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/30 text-indigo-200 mb-1">
+              <div key={idx} className="bg-white border border-indigo-100 rounded-xl p-3 shadow-2xs">
+                <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 border border-indigo-200 mb-1.5">
                   {rek.target}
                 </span>
-                <p className="text-xs text-slate-300 leading-relaxed">{rek.saran}</p>
+                <p className="text-xs text-slate-700 leading-relaxed">{rek.saran}</p>
               </div>
             ))}
           </div>

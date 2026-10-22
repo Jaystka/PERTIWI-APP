@@ -82,15 +82,17 @@ export default function ProfileManagerModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl max-w-xl w-full border border-slate-200 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div className="bg-white text-slate-800 px-6 py-4 flex items-center justify-between border-b border-slate-200">
           <div className="flex items-center gap-2.5">
-            <FolderOpen className="w-5 h-5 text-emerald-400" />
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200">
+              <FolderOpen className="w-4 h-4" />
+            </div>
             <div>
-              <h3 className="text-sm font-bold text-white">Kelola Profil & Penyimpanan Lokal UMKM</h3>
-              <p className="text-[11px] text-slate-400">
+              <h3 className="text-sm font-bold text-slate-900">Kelola Profil & Penyimpanan Lokal UMKM</h3>
+              <p className="text-[11px] text-slate-500">
                 Simpan beberapa nasabah di peramban, unduh backup JSON, atau muat data lama
               </p>
             </div>
@@ -98,7 +100,7 @@ export default function ProfileManagerModal({
           <button
             type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-white rounded-lg p-1.5 transition-colors"
+            className="text-slate-400 hover:text-slate-700 rounded-lg p-1.5 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -221,7 +223,7 @@ export default function ProfileManagerModal({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-bold rounded-lg bg-slate-900 hover:bg-slate-800 text-white"
+            className="px-4 py-2 text-xs font-bold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-xs transition-all"
           >
             Tutup
           </button>

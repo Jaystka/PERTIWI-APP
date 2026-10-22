@@ -56,11 +56,13 @@ export default function CashflowWaterfallChart({ cashflowChartData, dscrBaru }) 
             <Tooltip
               formatter={(value) => [formatRupiah(value), 'Nominal']}
               contentStyle={{
-                backgroundColor: '#0f172a',
-                color: '#ffffff',
-                borderRadius: '8px',
-                border: 'none',
-                fontSize: '12px'
+                backgroundColor: '#ffffff',
+                color: '#0f172a',
+                borderRadius: '10px',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+                fontSize: '12px',
+                fontWeight: 600
               }}
             />
             <Bar dataKey="Nominal" radius={[6, 6, 0, 0]}>

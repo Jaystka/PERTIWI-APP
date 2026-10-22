@@ -7,22 +7,22 @@ export default function MethodologyModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/75 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-2xl max-w-4xl w-full border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         {/* Modal Header */}
-        <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between border-b border-slate-800 shrink-0">
+        <div className="bg-white text-slate-800 px-6 py-4 flex items-center justify-between border-b border-slate-200 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
-              <Scale className="w-5 h-5 text-indigo-400" />
+            <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center border border-indigo-200">
+              <Scale className="w-5 h-5 text-indigo-600" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-base font-extrabold text-white">Landasan Regulasi & Metodologi Ilmiah</h3>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 uppercase tracking-wider">
+                <h3 className="text-base font-extrabold text-slate-900">Landasan Regulasi & Metodologi Ilmiah</h3>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 uppercase tracking-wider">
                   Hybrid Credit Scoring
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500">
                 Kerangka acuan perbankan nasional (OJK & BI), standar akuntansi SAK EMKM, dan literatur akademik
               </p>
             </div>
@@ -30,7 +30,7 @@ export default function MethodologyModal({ isOpen, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-white rounded-lg p-1.5 transition-colors"
+            className="text-slate-400 hover:text-slate-700 rounded-lg p-1.5 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -303,17 +303,17 @@ export default function MethodologyModal({ isOpen, onClose }) {
               </div>
 
               {/* Formula Anuitas */}
-              <div className="p-4 rounded-xl bg-slate-900 text-white space-y-2">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-400 block">
+              <div className="p-4 rounded-xl bg-indigo-50/70 border border-indigo-200 text-indigo-950 space-y-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700 block">
                   Rumus Matematika Keuangan: Rekomendasi Plafon Maksimal
                 </span>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 leading-relaxed">
                   Perhitungan limit plafon kredit yang aman menggunakan rumus <strong>Nilai Sekarang Anuitas Biasa (Present Value of Ordinary Annuity)</strong> berdasarkan kapasitas angsuran kas aman bulanan (agar DSCR tetap &ge; 1.50x):
                 </p>
-                <div className="bg-slate-800/90 border border-slate-700 p-3 rounded-lg text-center font-mono text-xs sm:text-sm text-emerald-400 font-bold overflow-x-auto">
+                <div className="bg-white border border-indigo-200 p-3 rounded-lg text-center font-mono text-xs sm:text-sm text-indigo-700 font-bold overflow-x-auto shadow-2xs">
                   Plafon Maksimal = Kapasitas Angsuran Aman × [ (1 - (1 + r)^-n) / r ]
                 </div>
-                <p className="text-[11px] text-slate-400">
+                <p className="text-[11px] text-slate-500">
                   Di mana <em>r</em> adalah suku bunga efektif per bulan (bunga tahunan / 12) dan <em>n</em> adalah jangka waktu tenor pinjaman dalam bulan.
                 </p>
               </div>
@@ -329,7 +329,7 @@ export default function MethodologyModal({ isOpen, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-bold rounded-xl bg-slate-900 hover:bg-slate-800 text-white transition-all shadow-xs"
+            className="px-4 py-2 text-xs font-bold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition-all shadow-xs"
           >
             Tutup
           </button>

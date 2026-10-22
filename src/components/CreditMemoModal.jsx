@@ -19,19 +19,19 @@ export default function CreditMemoModal({ isOpen, onClose, formData, analysis })
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4">
       <div className="bg-white rounded-2xl max-w-4xl w-full border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         {/* Modal Top Bar (Hidden in Print) */}
-        <div className="bg-slate-900 text-white px-6 py-3.5 flex items-center justify-between no-print shrink-0">
+        <div className="bg-white text-slate-800 px-6 py-3.5 flex items-center justify-between no-print shrink-0 border-b border-slate-200">
           <div className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-indigo-400" />
-            <span className="font-bold text-sm">Pratinjau Memorandum Analisis Kredit</span>
+            <FileText className="w-5 h-5 text-indigo-600" />
+            <span className="font-bold text-sm text-slate-900">Pratinjau Memorandum Analisis Kredit</span>
           </div>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs transition-all"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-xs transition-all"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Cetak / Simpan PDF</span>
@@ -39,7 +39,7 @@ export default function CreditMemoModal({ isOpen, onClose, formData, analysis })
             <button
               type="button"
               onClick={onClose}
-              className="text-slate-400 hover:text-white rounded-lg p-1.5 transition-colors"
+              className="text-slate-400 hover:text-slate-700 rounded-lg p-1.5 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -51,8 +51,8 @@ export default function CreditMemoModal({ isOpen, onClose, formData, analysis })
           {/* Header Lembaga / FinTech */}
           <div className="border-b-2 border-slate-800 pb-4 flex items-start justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black text-xl">
-                <ShieldCheck className="w-7 h-7 text-indigo-400" />
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-700 flex items-center justify-center font-black text-xl">
+                <ShieldCheck className="w-7 h-7 text-indigo-600" />
               </div>
               <div>
                 <h1 className="text-base font-black text-slate-900 uppercase tracking-tight">

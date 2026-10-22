@@ -368,24 +368,24 @@ export default function App() {
       </main>
 
       {/* Floating Score Banner on Screen (Sticky at Bottom) */}
-      <div className="fixed bottom-4 right-4 sm:right-6 z-40 bg-slate-900/95 backdrop-blur-md text-white border border-slate-700/80 rounded-2xl shadow-2xl p-2.5 px-4 flex items-center gap-3 sm:gap-4 animate-in slide-in-from-bottom-4">
+      <div className="fixed bottom-4 right-4 sm:right-6 z-40 bg-white/95 backdrop-blur-md text-slate-800 border border-slate-200 rounded-2xl shadow-xl p-2.5 px-4 flex items-center gap-3 sm:gap-4 animate-in slide-in-from-bottom-4">
         <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
           <div className="text-left">
             <span className="block text-[9px] uppercase tracking-wider text-slate-400 font-bold">
               Skor Kredit
             </span>
             <div className="flex items-center gap-1.5">
-              <span className="text-base font-black text-white">{analysis.finalCreditScore}</span>
+              <span className="text-base font-black text-slate-900">{analysis.finalCreditScore}</span>
               <span
-                className={`text-[10px] font-black px-1.5 py-0.2 rounded ${
+                className={`text-[10px] font-black px-1.5 py-0.5 rounded border ${
                   analysis.grade === 'A'
-                    ? 'bg-emerald-500/20 text-emerald-300'
+                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
                     : analysis.grade === 'B'
-                    ? 'bg-indigo-500/20 text-indigo-300'
+                    ? 'bg-indigo-50 text-indigo-700 border-indigo-200'
                     : analysis.grade === 'C'
-                    ? 'bg-amber-500/20 text-amber-300'
-                    : 'bg-rose-500/20 text-rose-300'
+                    ? 'bg-amber-50 text-amber-700 border-amber-200'
+                    : 'bg-rose-50 text-rose-700 border-rose-200'
                 }`}
               >
                 Grade {analysis.grade}
@@ -394,26 +394,26 @@ export default function App() {
           </div>
         </div>
 
-        <div className="h-7 w-[1px] bg-slate-700" />
+        <div className="h-7 w-[1px] bg-slate-200" />
 
         <div className="flex items-center gap-1.5">
           <button
             type="button"
             onClick={() => setIsStressTestOpen(true)}
-            className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition-all"
+            className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition-all shadow-2xs"
             title="Buka simulator stress test"
           >
-            <Sliders className="w-3.5 h-3.5" />
+            <Sliders className="w-3.5 h-3.5 text-amber-500" />
             <span className="hidden sm:inline">Stress Test</span>
           </button>
 
           <button
             type="button"
             onClick={() => setIsCreditMemoOpen(true)}
-            className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs transition-all"
+            className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-xs shadow-indigo-600/20 transition-all"
             title="Cetak format memorandum analisis kredit"
           >
-            <Printer className="w-3.5 h-3.5" />
+            <Printer className="w-3.5 h-3.5 text-white" />
             <span>Cetak Memo</span>
           </button>
         </div>
